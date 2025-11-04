@@ -1,0 +1,242 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #e6f7f2 url("../assets/background.jpg") no-repeat center top fixed;
+  background-size: 100% 800px;
+  z-index: 0;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.7);
+  z-index: -1;
+}
+
+/* ===== HEADER / NAVBAR ===== */
+.navbar {
+  background: linear-gradient(90deg,#009688,#00796b);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  padding: .8rem 1rem;
+}
+.navbar-brand {
+  color: #fff!important;
+  font: 700 1.5rem 'Poppins',sans-serif;
+  letter-spacing: 1px;
+}
+.navbar-brand:hover { color: #b2dfdb!important; }
+.nav-link {
+  color: #f1f1f1!important;
+  font-weight: 500;
+  transition: .3s;
+  border-radius: 6px;
+  margin-left: .3rem;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: #fff!important;
+  background: rgba(0,77,64,0.4);
+}
+.navbar-toggler {
+  border: none;
+  background: rgba(255,255,255,0.3);
+}
+.navbar-toggler-icon { filter: brightness(0) invert(1); }
+
+.content-card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.sampah-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px;
+  min-height: 200px;
+}
+
+.sampah {
+  width: 110px;
+  height: 130px;
+  background: #eaf4f4;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  text-align: center;
+  cursor: grab;
+  transition: transform 0.2s ease;
+}
+
+.sampah.dragging {
+  opacity: 0.6;
+  transform: scale(0.95);
+}
+
+.sampah img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.sampah p {
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+/* ======== Tempat sampah ======== */
+.dropzone {
+  width: 160px;
+  height: 190px;
+  border-radius: 16px;
+  font-weight: 600;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.dropzone.dragover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.dropzone.organik {
+  background-color: #74c69d;
+}
+.dropzone.anorganik {
+  background-color: #40916c;
+}
+.dropzone.b3 {
+  background-color: #b00020;
+}
+
+.drop-thumb img.mini-sampah {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  background: rgba(255,255,255,0.8);
+  border-radius: 8px;
+  margin: 3px;
+}
+
+/* ======== Efek gerak & shake ======== */
+.floating-clone {
+  pointer-events: none;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  will-change: transform, opacity;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+.sampah.shake {
+  animation: shake 0.4s;
+}
+
+/* ======== Penjelasan ======== */
+#penjelasan {
+  display: none;
+}
+footer {
+  background: #004d40;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+.navbar {
+  background: linear-gradient(90deg, #009688, #00796b);
+}
+
+.content-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.sampah-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.sampah {
+  width: 120px;
+  text-align: center;
+  cursor: grab;
+  transition: transform 0.2s;
+}
+
+.sampah img {
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+}
+
+.sampah:hover {
+  transform: scale(1.05);
+}
+
+.dropzone {
+  width: 150px;
+  height: 150px;
+  border: 3px dashed #aaa;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f9fa;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.dropzone:hover {
+  border-color: #4caf50;
+  background: #e8fbe8;
+}
+
+.dropzone.organik { border-color: #4caf50; }
+.dropzone.anorganik { border-color: #2196f3; }
+.dropzone.b3 { border-color: #f44336; }
+
+.penjelasan {
+  background: #e8f5e9;
+  border-left: 6px solid #4caf50;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  display: none;
+}
+
+
+    #message {
+      margin-top: 1.5rem;
+      font-weight: 600;
+      color: #004d40;
+      text-align: center;
+      display: none;
+    }
+
+    
+    footer {
+  background: #004d40;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: .9rem;
+}
+
+footer p {
+  margin: 0;
+  color: #fff;
+}

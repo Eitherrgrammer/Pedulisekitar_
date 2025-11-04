@@ -1,0 +1,178 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #e6f7f2 url("../assets/background.jpg") no-repeat center top fixed;
+  background-size: 100% 800px;
+  z-index: 0;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.7);
+  z-index: -1;
+}
+
+/* ===== HEADER / NAVBAR ===== */
+.navbar {
+  background: linear-gradient(90deg,#009688,#00796b);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  padding: .8rem 1rem;
+}
+.navbar-brand {
+  color: #fff!important;
+  font: 700 1.5rem 'Poppins',sans-serif;
+  letter-spacing: 1px;
+}
+.navbar-brand:hover { color: #b2dfdb!important; }
+.nav-link {
+  color: #f1f1f1!important;
+  font-weight: 500;
+  transition: .3s;
+  border-radius: 6px;
+  margin-left: .3rem;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: #fff!important;
+  background: rgba(0,77,64,0.4);
+}
+.navbar-toggler {
+  border: none;
+  background: rgba(255,255,255,0.3);
+}
+.navbar-toggler-icon { filter: brightness(0) invert(1); }
+
+/* ===== HERO SECTION ===== */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  gap: 2.5rem;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+}
+.hero-text {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  max-width: 550px;
+}
+.hero-text h3 { color: #004d40; font-weight: 700; }
+.hero-text p { font-size: 1.1rem; color: #333; }
+.hero-image img {
+  width: 85%;
+  max-width: 400px;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ===== ANIMASI ===== */
+@keyframes float {
+  0%,100% {transform: translateY(0);}
+  50% {transform: translateY(-10px);}
+}
+@keyframes fadeInLeft {
+  from {opacity:0;transform:translateX(-40px);}
+  to {opacity:1;transform:translateX(0);}
+}
+@keyframes fadeInRight {
+  from {opacity:0;transform:translateX(40px);}
+  to {opacity:1;transform:translateX(0);}
+}
+.fade-in-left {
+  opacity: 0;
+  animation: fadeInLeft 1s ease forwards;
+}
+.fade-in-right {
+  opacity: 0;
+  animation: fadeInRight 1s ease .3s forwards;
+}
+.animate-float { animation: float 3s ease-in-out infinite; }
+
+/* ===== ABOUT SECTION ===== */
+.about { color: #333; }
+.about .col-md-7 {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.about h2 { color: #00796b; font-weight: 700; font-size: 1.9rem; }
+.about p { font-size: 1.05rem; line-height: 1.7; }
+.about-image {
+  max-width: 90%;
+  border-radius: 20px;
+  transition: .4s;
+}
+.about-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ===== BUTTON ===== */
+.btn-success {
+  background: #00796b;
+  border: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: .3s;
+}
+.btn-success:hover {
+  background: #004d40;
+  transform: translateY(-3px);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #004d40;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: .9rem;
+}
+footer p { margin: 0; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:991px) {
+  body {
+    background: #e6f7f2 url("assets/background.jpg") no-repeat center center fixed;
+    background-size: cover;
+  }
+  body::before {
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .navbar-collapse {
+    background: #00695c;
+    border-radius: 10px;
+    padding: .8rem 1rem;
+    width: 80%;
+    margin: .5rem auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: .3s;
+  }
+  .navbar-nav .nav-link {
+    text-align: center;
+    padding: .6rem 0;
+    font-size: 1rem;
+  }
+  .navbar-toggler,
+  .navbar-toggler:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+}
+@media (max-width:768px) {
+  .hero-text,
+  .about .col-md-7 {
+    background: rgba(255,255,255,0.85);
+    padding: 1rem;
+  }
+}

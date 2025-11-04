@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pedulisekitar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/interaktif.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Pedulisekitar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="jenis.html">Jenis</a></li>
+          <li class="nav-item"><a class="nav-link active" href="interaktif.html">Simulasi</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Konten -->
+  <div class="container py-5">
+    <div class="content-card">
+      <h2 class="text-center mb-4">Ayo Pilah Sampah Sesuai Jenisnya!</h2>
+      <p class="text-center mb-4">
+        Memilih dan memilah sampah dengan benar adalah salah satu cara menghindari
+        <b>pencemaran lingkungan</b>. Seret setiap sampah ke tempat yang sesuai!
+      </p>
+
+      <div class="row justify-content-center">
+        <!-- Kolom Sampah -->
+        <div class="col-md-6 mb-4 text-center">
+          <h5>Seret Sampah ke Tempat yang Tepat</h5>
+          <div id="sampah-list" class="sampah-container">
+            <div class="sampah" draggable="true" data-jenis="organik" data-nama="Daun Kering" data-penjelasan="Daun kering termasuk sampah organik yang dapat dijadikan kompos.">
+              <img src="assets/daunkering.png" alt="Daun Kering">
+              <p>Daun Kering</p>
+            </div>
+            <div class="sampah" draggable="true" data-jenis="anorganik" data-nama="Botol Plastik" data-penjelasan="Botol plastik merupakan sampah anorganik yang dapat didaur ulang menjadi produk baru.">
+              <img src="assets/botolplastik.png" alt="Botol Plastik">
+              <p>Botol Plastik</p>
+            </div>
+            <div class="sampah" draggable="true" data-jenis="anorganik" data-nama="Botol Sabun" data-penjelasan="Botol sabun juga termasuk anorganik karena terbuat dari plastik.">
+              <img src="assets/botolsabun.png" alt="Botol Sabun">
+              <p>Botol Sabun</p>
+            </div>
+            <div class="sampah" draggable="true" data-jenis="b3" data-nama="Baterai Bekas" data-penjelasan="Baterai bekas termasuk limbah B3 karena mengandung bahan kimia berbahaya.">
+              <img src="assets/baterai.png" alt="Baterai Bekas">
+              <p>Baterai Bekas</p>
+            </div>
+            <div class="sampah" draggable="true" data-jenis="anorganik" data-nama="Kardus Bekas" data-penjelasan="Kardus termasuk sampah anorganik yang dapat didaur ulang menjadi bahan kertas baru.">
+              <img src="assets/kardus.png" alt="Kardus Bekas">
+              <p>Kardus Bekas</p>
+            </div>
+            <div class="sampah" draggable="true" data-jenis="b3" data-nama="Lampu Pecah" data-penjelasan="Lampu pecah mengandung zat berbahaya seperti merkuri, termasuk limbah B3.">
+              <img src="assets/lampupecah.png" alt="Lampu Pecah">
+              <p>Lampu Pecah</p>
+            </div>
+            <div class="sampah" draggable="true" data-jenis="organik" data-nama="Sisa Buah" data-penjelasan="Sisa buah termasuk sampah organik yang dapat terurai secara alami.">
+              <img src="assets/sisabuah.png" alt="Sisa Buah">
+              <p>Sisa Buah</p>
+            </div>
+            <div class="sampah" draggable="true" data-jenis="anorganik" data-nama="Kotak Minum" data-penjelasan="Kotak minum bekas termasuk anorganik karena terdiri dari bahan plastik dan aluminium.">
+              <img src="assets/kotakminum.png" alt="Kotak Minum">
+              <p>Kotak Minum</p>
+            </div>
+            <div class="sampah" draggable="true" data-jenis="organik" data-nama="Kulit Pisang" data-penjelasan="Kulit pisang termasuk sampah organik yang mudah membusuk dan bisa dijadikan pupuk kompos.">
+              <img src="assets/pisang.png" alt="Kulit Pisang">
+              <p>Kulit Pisang</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kolom Tempat Sampah -->
+        <div class="col-md-6 text-center">
+          <h5>Pilih Jenis Tempat Sampah</h5>
+          <div class="d-flex justify-content-center gap-3 mt-3 flex-wrap">
+            <div class="dropzone organik" data-jenis="organik">Organik 🌿</div>
+            <div class="dropzone anorganik" data-jenis="anorganik">Anorganik ♻️</div>
+            <div class="dropzone b3" data-jenis="b3">B3 ☣️</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 penjelasan" id="penjelasan"></div>
+
+      <div class="text-center mt-4">
+        <a href="index.html" class="btn btn-outline-success btn-sm px-4">⬅ Kembali ke Beranda</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Media Pembelajaran | Create by: Yudha Agung Kuncoro dan Nouval Aulia Rahman</p>
+  </footer>
+
+
+  <div class="modal fade" id="selesaiModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title">🎉 Selamat!</h5>
+        </div>
+        <div class="modal-body">
+          <p>Kamu sudah berhasil memilah semua sampah dengan benar! 🌏</p>
+          <button id="ulangBtn" class="btn btn-success">🔁 Ulangi Permainan</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
